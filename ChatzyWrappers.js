@@ -198,11 +198,11 @@ function changeName(name) {
 }
 
 // Given a tab element and a certain class, it will either add or remove the class.
-// elIn: Element; classIn: String; confusingBool: Boolean
-function highlightTab(elIn, classIn, confusingBool) {
+// elIn: Element; classIn: String; addClass: Boolean
+function highlightTab(elIn, classIn, addClass) {
     var hasClass = new RegExp("\\b" + classIn + "\\b");
-    if (!confusingBool != !elIn.className.match(hasClass)) { //This is just a XOR. Combined with the below if, it means that this is checking whether we are adding or removing a class, and if that is necessary.
-        if (confusingBool) {
+    if (!addClass != !elIn.className.match(hasClass)) { //This is a XOR. Combined with the below if, it means that this is checking whether we are adding or removing a class, and if that is necessary.
+        if (addClass) {
             elIn.className += (elIn.className ? " " : "") + classIn;
         } else {
             elIn.className = elIn.className.replace(hasClass, "").replace(/^\s/, "").replace(/\s$/, "");
