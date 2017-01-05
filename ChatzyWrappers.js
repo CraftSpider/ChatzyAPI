@@ -4,14 +4,14 @@
     ---------------------
 */
 
-var messageTable = "X2325";
-var messageContainer = "X1506";
-var popup = "X7376";
-var messageTime = "X4177";
-var messageButton = "X1602";
-var PMTag = "X6200";
-var textBox = "X5694";
-var visitorTable = "X2280";
+var messageTable = "X3942";
+var messageContainer = "X4228";
+var popup = "X3674";
+var messageTime = "X1531";
+var messageButton = "X1607";
+var PMTag = "X5966";
+var textBox = "X5694"; //TODO: find what happens with this now
+var visitorTable = "X4665";
 
 /*
     -------------------
@@ -19,8 +19,8 @@ var visitorTable = "X2280";
     -------------------
 */
 
-var isCleared = "X1368";
-var timeoutTimer = "X8987";
+var isCleared = "X9120";
+var timeoutTimer = "X7957";
 
 /*
     -----------------
@@ -42,12 +42,12 @@ function elementsByClass(elementClass) {
 
 // Removes the user from whatever room they are currently in
 function leaveChat() {
-    X2041("X2398");
+    X5502("X2839");
 }
 
 // Closes whatever popup box is currently on the screen, if there is one.
 function closePopup() {
-    X3207();
+    X8371();
 }
 
 // Posts a message to chat. All basic bold, italic, and strikethrough tags will be replaced with Chatzy ones
@@ -60,7 +60,7 @@ function postMessage(message) {
             message = message.replace(HTMLTags[tag],ChatzyTags[tag]);
         }
     }
-    X8532(message);
+    X1270(message);
 }
 
 // Sets the user's current status, remembered if perm is true.
@@ -96,7 +96,7 @@ function openChat() {
 
 // Toggles whether the room is currently oppened or closed.
 function toggleChatLock() {
-    if(X7759.X1874) { //Variable for whether the chat is locked, of course.
+    if(X2207.X3255) { //Variable for whether the chat is locked, of course.
         postMessage("/open");
     } else {
         postMessage("/close");
@@ -153,7 +153,7 @@ function banUsers(users) {
 // Sends a private message to all online users
 // message: String
 function globalMessage(message) {
-    var users = X8696.split("\n");
+    var users = X7972.split("\n");
     for (var i = 1; i <= users[0]; i++) {
         var user = users[i].split("\t");
         privateMessage(user[0], message);   //Replace the 0 with other numbers to grab different values. 2 is last leave/exit, 4 is status, 5 is location.
@@ -166,7 +166,7 @@ function globalMessage(message) {
 function editRoomBoard(message, method, key) {
     postMessage("/rb");
     setTimeout(function() {
-        var BoardMessage = elementByID("X3755");
+        var BoardMessage = elementByID("X1272");
         switch (method) {
             case 1:
                 BoardMessage.value = BoardMessage.value + "\n" + message;
@@ -182,18 +182,18 @@ function editRoomBoard(message, method, key) {
             default:
                 BoardMessage.value = message;
         }
-        X5999.onclick();
+        X6642.onclick();
     }, 150);
 }
 
 // Changes current user's name. Currently causes page reload, possibly fixable?
 // name: String
 function changeName(name) {
-   X8234('X3489');
+   X2712('X8456');
 
     setTimeout(function() {
-        X7758.value = name;
-        X6791.onsubmit();
+        X1496.value = name;
+        X2488.onsubmit();
     }, 1000);
 }
 
@@ -213,7 +213,7 @@ function highlightTab(elIn, classIn, addClass) {
 // Returns the text sufficient to generate a Chatzy menu tab.
 // picName: String; clickFunc: String; displayText: String; isChecked: Boolean; isLocked: Boolean
 function generateTab(picName, clickFunc, displayText, isChecked, isLocked) {
-    return '<A href="#" onClick="' + clickFunc + 'return false;"' + (isLocked ? ' class="X6614"' : "") + '>' + (isChecked ? "<SPAN style='float:right;margin:0 4px 0 0;'>&nbsp;&#10003;</SPAN>" : "") + (picName ? '<IMG src="/elements/icon17/' + picName + '.png">' : "") + displayText + '</A>';
+    return '<A href="#" onClick="' + clickFunc + 'return false;"' + (isLocked ? ' class="X2333"' : "") + '>' + (isChecked ? "<SPAN style='float:right;margin:0 4px 0 0;'>&nbsp;&#10003;</SPAN>" : "") + (picName ? '<IMG src="/elements/icon17/' + picName + '.png">' : "") + displayText + '</A>';
 }
 
 // Returns a promise for certain visitor data from the visitor list.
@@ -221,7 +221,7 @@ function generateTab(picName, clickFunc, displayText, isChecked, isLocked) {
 // columns: List of Strings
 function getVisitorData(columns) {
     return new Promise(function(resolve, reject) {
-        X7535.onclick();
+        X6925.onclick();
         var iterations = 0;
         var vis = setInterval(function() {
             iterations++;
