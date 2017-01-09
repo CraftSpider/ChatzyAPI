@@ -10,7 +10,7 @@ var popup = "X3674";
 var messageTime = "X1531";
 var messageButton = "X1607";
 var PMTag = "X5966";
-var textBox = "X5694"; //TODO: find what happens with this now
+var textBox = "X4898";
 var visitorTable = "X4665";
 
 /*
