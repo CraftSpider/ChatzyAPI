@@ -1,0 +1,22 @@
+X\d+\(\"X(\d+)\"\)\.innerHTML = X\d+\(X\d+ && X\d+\.checked\)\.replace
+X\d+\(\"X(\d+)\"\)\.style\.width = \(X\d+ - 38\) \+ \"px\";
+X(\d+)\.style\.backgroundColor = \(X\d+ \? \"#FFFFFF\" : \"\"\);
+return '&nbsp;<SPAN class=\"X(\d+)
+function X(\d+)\(X\d+\) {\n\s+X\d+\(X\d+\);
+Global Message<!--X(\d+)-->
+<TEXTAREA id=\"X(\d+)\"
+X\d+\(\"X(\d+)\"\).firstChild.childNodes
+X\d+\(X\d+, 'Chat window restored'\);\n\s+X(\d+) = false;
+X(\d+) < \(new Date\(\)\).getTime\(\)
+X(\d+)\(\\'X(\d+)\\'\);\" value=\"OK\"
+<INPUT type=\"button\" class=\"X(\d+)\"
+X(\d+)\('/status'\);
+\(X(\d+)\.X(\d+) \? \"open\" : \"close\"\)
+> 0 && X(\d+) \? \"block\" : \"none\"
+ = X\d+\(\"X(\d+)\"\)\.value\.replace
+X(\d+)\.value = \(X\d+ \? "Refresh
+the <A href=\"#\" onClick=\"X(\d+)
+X(\d+)',this\);\", 'Change Name/Color'
+X(\d+)\.value == \"\" && document\.cookie\.match\(/ChatzyPrefs2=
+\(X\d+\.X\d+ \|\| X\d+ \|\| 2\) \+ \"&X(\d+)=\"
+\"v\": 'X\d+\(\"X(\d+)\"\);',
