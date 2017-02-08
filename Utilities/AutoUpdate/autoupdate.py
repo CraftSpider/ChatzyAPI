@@ -13,7 +13,7 @@ def save_file(fname, string):
     f.write(string)
     f.close()
 
-source_code = read_file('ChatzyScript-19.js')
+source_code = read_file('ChatzyScript.js')
 regular_expressions = read_file('regexes.txt').split('\n')
 api = read_file('api.js')
 
