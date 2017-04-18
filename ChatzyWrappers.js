@@ -186,6 +186,76 @@ function editRoomBoard(message, method, key) {
     }, 150);
 }
 
+// 
+// title: String; answers: Array of Strings; open: Boolean; privacyLevel: Int; postFreq: Int; askFreq: Int; autoStop: Int
+function askQuestion(title, answers, open, privacyLevel, postFreq, askFreq, autoStop) {
+    
+    switch (privacyLevel) {
+        default:
+        case 0:
+            privacyLevel = "Public";
+            break;
+        case 1:
+            privacyLevel = "Protected";
+            break;
+        case 2:
+            privacyLevel = "Secret";
+            break;
+    }
+    switch (postFreq) {
+        case 0:
+            postFreq = "";
+            break;
+        default:
+        case 1:
+            postFreq = "<PostNew>";
+            break;
+        case 2:
+            postFreq = "<PostAll>";
+            break;
+    }
+    switch (askFreq) {
+        case 0:
+            askFreq = "DoNotAsk";
+            break;
+        default:
+        case 1:
+            askFreq = "AskOnce";
+            break;
+        case 2:
+            askFreq = "AskDaily";
+            break;
+    }
+    
+    postMessage("/ask {OpenEnded:" + (+open) + "}" +
+                "{Responses:<" + privacyLevel + ">" + postFreq + "}" +
+                "{RoomEntry:" + askFreq + "}" +
+                "{AutoStop:" + (autoStop ? autoStop : "") + "}" +
+                title + "<>" +
+                answers.join("<>"));
+    /*/ask {OpenEnded:0}{Responses:<Public><PostNew>}{RoomEntry:AskOnce}{AutoStop:}Test2<>/;
+    /ask {OpenEnded:0}{Responses:<Public><PostAll>}{RoomEntry:AskOnce}{AutoStop:}Test2<>/;
+    /ask {OpenEnded:1}{Responses:<Public>}{RoomEntry:AskOnce}{AutoStop:}Test2<>/;
+    /ask {OpenEnded:1}{Responses:<Protected>}{RoomEntry:AskOnce}{AutoStop:}Test2<>/;
+    /ask {OpenEnded:1}{Responses:<Secret>}{RoomEntry:AskOnce}{AutoStop:}Test2<>/;
+    /ask {OpenEnded:1}{Responses:<Public><PostNew>}{RoomEntry:AskAlways}{AutoStop:10}Test<>/;
+    /ask RoomEntry:AskDaily/;
+    /RoomEntry:DoNotAsk/;
+    /ask {OpenEnded:1}{Responses:<Public><PostNew>}{RoomEntry:AskOnce}{AutoStop:}Test<>Test2<>Foo<>Bar<>anon/;
+    /ask {OpenEnded:1}{Responses:<Public><PostNew>}{RoomEntry:AskOnce}{AutoStop:}Test<><><><><>  <>Foo/; //Results in N/A four times.
+    /ask:again/;
+    /ask:update/;
+    /question:interim/;
+    /question:silent/;
+    /question:details/;
+    /question:reopen/;
+    /question:totals/;
+    /ask:reuse/;
+    /question:reset/;
+    /X9597/;*/ //Equivalent to question?
+    
+}
+
 // Changes current user's name. Currently causes page reload, possibly fixable?
 // name: String
 function changeName(name) {
