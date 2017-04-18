@@ -4,14 +4,14 @@
     ---------------------
 */
 
-var messageTable = "X3266";
-var messageContainer = "X6863";
-var popup = "X4467";
-var messageTime = "X2066";
-var messageButton = "X9127";
-var PMTag = "X2225";
-var textBox = "X5395";
-var visitorTable = "X6138";
+var messageTable = "X2399";
+var messageContainer = "X2855";
+var popup = "X1629";
+var messageTime = "X6439";
+var messageButton = "X1337";
+var PMTag = "X4493";
+var textBox = "X4357";
+var visitorTable = "X7677";
 
 /*
     -------------------
@@ -19,8 +19,8 @@ var visitorTable = "X6138";
     -------------------
 */
 
-var isCleared = "X6317";
-var timeoutTimer = "X1903";
+var isCleared = "X4050";
+var timeoutTimer = "X3472";
 
 /*
     -----------------
@@ -42,12 +42,12 @@ function elementsByClass(elementClass) {
 
 // Removes the user from whatever room they are currently in
 function leaveChat() {
-    X8437("X3163");
+    X9982("X7445");
 }
 
 // Closes whatever popup box is currently on the screen, if there is one.
 function closePopup() {
-    X3741();
+    X8258();
 }
 
 // Posts a message to chat. All basic bold, italic, and strikethrough tags will be replaced with Chatzy ones
@@ -60,7 +60,7 @@ function postMessage(message) {
             message = message.replace(HTMLTags[tag],ChatzyTags[tag]);
         }
     }
-    X7302(message);
+    X2808(message);
 }
 
 // Sets the user's current status, remembered if perm is true.
@@ -96,7 +96,7 @@ function openChat() {
 
 // Toggles whether the room is currently oppened or closed.
 function toggleChatLock() {
-    if(X6538.X6739) { //Variable for whether the chat is locked, of course.
+    if(X9096.X4159) { //Variable for whether the chat is locked, of course.
         postMessage("/open");
     } else {
         postMessage("/close");
@@ -153,7 +153,7 @@ function banUsers(users) {
 // Sends a private message to all online users
 // message: String
 function globalMessage(message) {
-    var users = X9937.split("\n");
+    var users = X4416.split("\n");
     for (var i = 1; i <= users[0]; i++) {
         var user = users[i].split("\t");
         privateMessage(user[0], message);   //Replace the 0 with other numbers to grab different values. 2 is last leave/exit, 4 is status, 5 is location.
@@ -166,7 +166,7 @@ function globalMessage(message) {
 function editRoomBoard(message, method, key) {
     postMessage("/rb");
     setTimeout(function() {
-        var BoardMessage = elementByID("X7308");
+        var BoardMessage = elementByID("X1002");
         switch (method) {
             case 1:
                 BoardMessage.value = BoardMessage.value + "\n" + message;
@@ -182,18 +182,18 @@ function editRoomBoard(message, method, key) {
             default:
                 BoardMessage.value = message;
         }
-        X4296.onclick();
+        X3614.onclick();
     }, 150);
 }
 
 // Changes current user's name. Currently causes page reload, possibly fixable?
 // name: String
 function changeName(name) {
-   X2966('X9093');
+   X2206('X8861');
 
     setTimeout(function() {
-        X5067.value = name;
-        X8998.onsubmit();
+        X2527.value = name;
+        X4225.onsubmit();
     }, 1000);
 }
 
