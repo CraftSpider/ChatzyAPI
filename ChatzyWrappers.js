@@ -221,7 +221,7 @@ function generateTab(picName, clickFunc, displayText, isChecked, isLocked) {
 // columns: List of Strings
 function getVisitorData(columns) {
     return new Promise(function(resolve, reject) {
-        X2031.onclick();
+        X9367.onclick();
         var iterations = 0;
         var vis = setInterval(function() {
             iterations++;
