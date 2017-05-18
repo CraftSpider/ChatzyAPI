@@ -1,3 +1,4 @@
 *.komodoproject
 Utilities/AutoUpdate/ChatzyScript.js
 Utilities/AutoUpdate/api.js
+Utilities/AutoUpdate/new_api.js
