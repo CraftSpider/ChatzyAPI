@@ -166,7 +166,7 @@ function globalMessage(message) {
 function editRoomBoard(message, method, key) {
     postMessage("/rb");
     setTimeout(function() {
-        var BoardMessage = X2492("X9267").value; //THIS VAR IS THE ex-X0000 AND MAY BREAK STUFF DON'T PUSH TO MASTER W/O ASKING CRUXICHEIROS
+        var BoardMessage = elementByID("X9267"); //this really should work but test first + remove this comment
         switch (method) {
             case 1:
                 BoardMessage.value = BoardMessage.value + "\n" + message;
