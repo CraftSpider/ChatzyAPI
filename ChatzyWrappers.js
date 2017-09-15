@@ -201,12 +201,17 @@ function changeName(name) {
 // elIn: Element; classIn: String; addClass: Boolean
 function highlightTab(elIn, classIn, addClass) {
     var hasClass = new RegExp("\\b" + classIn + "\\b");
-    if (!addClass != !elIn.className.match(hasClass)) { //This is a XOR. Combined with the below if, it means that this is checking whether we are adding or removing a class, and if that is necessary.
+    /*if (!addClass != !elIn.className.match(hasClass)) { //This is a XOR. Combined with the below if, it means that this is checking whether we are adding or removing a class, and if that is necessary.
         if (addClass) {
             elIn.className += (elIn.className ? " " : "") + classIn;
         } else {
             elIn.className = elIn.className.replace(hasClass, "").replace(/^\s/, "").replace(/\s$/, "");
         }
+    }*/
+    if (!hasClass && addClass) {
+        elIn.className += (elIn.className ? " " : "") + classIn;
+    } if (hasClass && !addClass) {
+        elIn.className = elIn.className.replace(hasClass, "").replace(/^\s/, "").replace(/\s$/, "");
     }
 }
 
